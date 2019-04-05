@@ -15,6 +15,7 @@
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/particles.css">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/animate.css">
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="https://cdn.ckeditor.com/ckeditor5/12.0.0/classic/ckeditor.js"></script>
 </head>
 <body id="particles-js" style="overflow: hidden;">
 
@@ -25,6 +26,26 @@
 		  console.log('callback - particles.js config loaded');
 		});
 	</script>
-
+	
+	<div id="main">
+	
+	<header>
+		<div class="header-item search-item" style="flex-basis: 90%; flex-grow: 1; white-space: nowrap;">
+			<i class="fas fa-search" style="padding-right:10px"></i><input type="text" id="notes-filter" onkeyup="filterNotes('notes-filter')" placeholder="Filter the below notes...">
+		</div>
+		<div class="header-item" style="flex-basis: 10%; flex-grow: 1; white-space: nowrap;">
+			
+			<form action="${pageContext.request.contextPath}/Logout" method="post">
+		 		${username}
+			 	<span>
+				   <button type="submit" name="Logout" value="Logout" ><i style="padding-top: 5px;padding-bottom: 0px;padding-left: 0px;padding-right: 0px;" class="fas fa-sign-out-alt"></i></button>
+				</span>
+			</form>	 	
+		
+		</div>
+	</header>
+	
+	</div>
+	
 </body>
 </html>

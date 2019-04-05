@@ -68,6 +68,7 @@ public class Login extends HttpServlet {
                     
                     //Add session attributes
     				session.setAttribute("id", id);
+    				session.setAttribute("username", username);
     				session.setAttribute("login", "true");
                     
                     // Clean-up environment
