@@ -55,6 +55,12 @@ header{
 	font-size: 18pt;
 	background: none;
 	border: none;
+	color: rgb(105, 109, 119);
+}
+
+::placeholder {
+  color: rgb(154, 159, 168);
+  opacity: 1;
 }
 
 .header-item button{

@@ -30,10 +30,10 @@
 	<div id="main">
 	
 	<header>
-		<div class="header-item search-item" style="flex-basis: 90%; flex-grow: 1; white-space: nowrap;">
-			<i class="fas fa-search" style="padding-right:10px"></i><input type="text" id="notes-filter" onkeyup="filterNotes('notes-filter')" placeholder="Filter the below notes...">
+		<div class="header-item search-item" style="flex-basis: 99%; flex-grow: 1; white-space: nowrap;">
+			<i class="fas fa-search" style="padding-right:10px"></i><input style="width: 100%;" type="text" id="notes-filter" onkeyup="filterNotes('notes-filter')" placeholder="Filter the below notes...">
 		</div>
-		<div class="header-item" style="flex-basis: 10%; flex-grow: 1; white-space: nowrap;">
+		<div class="header-item" style="flex-basis: 1%; flex-grow: 1; white-space: nowrap;">
 			
 			<form action="${pageContext.request.contextPath}/Logout" method="post">
 		 		${username}
