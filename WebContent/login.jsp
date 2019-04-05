@@ -10,6 +10,8 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/login.css">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/particles.css">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/animate.css">
+
 </head>
 
 <body id="particles-js" style="overflow: hidden;">
@@ -35,7 +37,9 @@
 		
 		<%
 			if (request.getParameter("login") != null &&  request.getParameter("login").equals("false")) {
-				out.println("<div class=\"error\"><p>Invalid login credentials.</p></div>");
+				out.println("<div class=\"message animated flash\"><p>Invalid login credentials.</p></div>");
+			} else{
+				out.println("<div class=\"message\"><p>&nbsp</p></div>");
 			}
 		%>
 	</div>
