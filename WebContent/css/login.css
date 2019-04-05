@@ -50,9 +50,10 @@ body {
 }
 
 .username i, .password i {
-	color: rgba(147, 206, 222, 1);
+	color: rgba(147, 206, 222, 0.75);
 	font-size: 18pt;
 	padding: 5px;
+    text-shadow: 0px 1px 1px #fff, 0 0 0 #000, 0px 0px 0px transparent;
 }
 
 .username input[type="text"], .password input[type="password"] {
@@ -68,8 +69,7 @@ body {
 
 .message {
 	text-align: center;
-	color: white;
-	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+	color: #ff2e3a;
 }
 
 ::placeholder {
