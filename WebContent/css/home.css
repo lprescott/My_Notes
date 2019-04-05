@@ -39,11 +39,11 @@ header {
 	flex-direction: row;
 	flex-wrap: nowrap;
 	background: white;
-	padding: 10px;
 	margin: 10px;
 	border-radius: 5px;
 	box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 	color: rgb(105, 109, 119);
+	overflow: hidden;
 }
 
 .header-item {
@@ -77,14 +77,13 @@ header {
 .header-item i {
 	color: rgba(147, 206, 222, 0.75);
 	font-size: 18pt;
-	padding: 6px 11px;
+	padding: 6px 6px;
 	text-shadow: 0px 1px 1px #fff, 0 0 0 #000, 0px 0px 0px transparent;
 }
 
 .header-item i:hover {
 	color: rgba(147, 206, 222, .9);
 }
-
 
 *:focus {
 	outline: none;
@@ -109,4 +108,53 @@ fas.fa-sign-out-alt {
 
 #notes-filter {
 	width: 100%;
+}
+
+#note-container {
+	margin: 20px 10px;
+}
+
+.note {
+	background: white;
+	padding: 20px;
+	border-radius: 5px;
+	box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+	color: rgb(105, 109, 119);
+}
+
+.controls {
+	float: right;
+}
+
+header>a>i {
+	color: rgba(91, 170, 75, 0.75);
+	font-size: 20pt;
+	padding: 15px;
+	text-shadow: 0px 1px 1px #fff, 0 0 0 #000, 0px 0px 0px transparent;
+	background: rgba(157, 221, 144, 0.75);
+}
+
+header>a {
+	cursor: pointer;
+}
+
+.padding {
+	padding: 10px;
+}
+
+#dropdown {
+	padding: 5px 10px;
+	color: rgba(147, 206, 222, 0.75);
+	text-shadow: 0px 1px 1px #fff, 0 0 0 #000, 0px 0px 0px transparent;
+}
+
+#edit {
+	padding: 5px 10px;
+	color: rgba(147, 206, 222, 0.75);
+	text-shadow: 0px 1px 1px #fff, 0 0 0 #000, 0px 0px 0px transparent;
+}
+
+#delete {
+	padding: 5px 10px;
+	color: #ea594f;
 }
