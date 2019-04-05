@@ -58,7 +58,7 @@ body {
 	font-size: 18pt;
 	background: none;
 	border: none;
-	color: rgb(124, 129, 140);
+	color: rgb(105, 109, 119);
 }
 
 *:focus {
@@ -69,4 +69,17 @@ body {
 	text-align: center;
 	color: white;
 	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+::placeholder {
+  color: rgb(154, 159, 168);
+  opacity: 1;
+}
+
+:-ms-input-placeholder {
+  color: rgb(154, 159, 168);
+}
+
+::-ms-input-placeholder { 
+  color: rgb(154, 159, 168);
 }
