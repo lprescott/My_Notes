@@ -18,15 +18,15 @@
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/particles.css">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/animate.css">
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-<script src="https://cdn.ckeditor.com/ckeditor5/12.0.0/classic/ckeditor.js"></script>
 </head>
-<body id="particles-js" style="overflow: hidden;">
-
+<body>
+	<div id="particles-js"></div>
+	
 	<script src="${pageContext.request.contextPath}/js/particles.js"></script>
 	<script>
 		/* particlesJS.load(@dom-id, @path-json, @callback (optional)); */
 		particlesJS.load('particles-js', '${pageContext.request.contextPath}/json/particlesjs-config-nasa.json', function() {
-		  console.log('callback - particles.js config loaded');
+		  console.log('callback - particles.js nasa config loaded');
 		});
 	</script>
 	
@@ -41,7 +41,7 @@
 				<form action="${pageContext.request.contextPath}/Logout" method="post">
 			 		${username}
 				 	<span>
-					   <button type="submit" name="Logout" value="Logout" ><i class="fas fa-sign-out-alt"></i></button>
+					   <button type="submit" name="Logout" value="Logout" title="Logout"><i class="fas fa-sign-out-alt"></i></button>
 					</span>
 				</form>	 	
 			

@@ -87,9 +87,9 @@ body {
 }
 
 .swal-button--Cancel{
-	background: #ED4337;
+	background: #ea594f;
 }
 
 .swal-button--Cancel:hover{
-	background: #d82013 !important;
+	background: #ED4337 !important;
 }

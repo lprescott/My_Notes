@@ -18,8 +18,9 @@
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
 
-<body id="particles-js" style="overflow: hidden;">
-
+<body>
+	<div id="particles-js"></div>
+	
 	<script src="${pageContext.request.contextPath}/js/particles.js"></script>
 	<script>
 		/* particlesJS.load(@dom-id, @path-json, @callback (optional)); */
