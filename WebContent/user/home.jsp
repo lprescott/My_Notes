@@ -1,4 +1,7 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@page import="edu.albany.csi410.session.LoginEnum"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql"%>
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     
@@ -29,21 +32,33 @@
 	
 	<div id="main">
 	
-	<header>
-		<div class="header-item search-item">
-			<i class="fas fa-search"></i><input type="text" id="notes-filter" onkeyup="filterNotes('notes-filter')" placeholder="Filter the below notes...">
-		</div>
-		<div class="header-item">
+		<header>
+			<div class="header-item search-item">
+				<i class="fas fa-search"></i><input type="text" id="notes-filter" onkeyup="filterNotes('notes-filter')" placeholder="Filter the below notes...">
+			</div>
+			<div class="header-item">
+				
+				<form action="${pageContext.request.contextPath}/Logout" method="post">
+			 		${username}
+				 	<span>
+					   <button type="submit" name="Logout" value="Logout" ><i class="fas fa-sign-out-alt"></i></button>
+					</span>
+				</form>	 	
 			
-			<form action="${pageContext.request.contextPath}/Logout" method="post">
-		 		${username}
-			 	<span>
-				   <button type="submit" name="Logout" value="Logout" ><i class="fas fa-sign-out-alt"></i></button>
-				</span>
-			</form>	 	
+			</div>
+		</header>
 		
+		<sql:setDataSource var="snapshot" driver="com.mysql.cj.jdbc.Driver" url="<%=LoginEnum.hostname.getValue()%>" user="<%=LoginEnum.username.getValue()%>" password="<%=LoginEnum.password.getValue()%>" />
+		<sql:query dataSource="${snapshot}" var="result"> SELECT * FROM NOTES WHERE USER_ID = ${id};</sql:query>
+		
+		<div id="note-container">
+			<c:forEach var="row" items="${result.rows}">
+				<div class="note">
+					<h2><c:out value="${row.TITLE}" /></h2>
+					<p><c:out value="${row.TEXT}" /></p>
+				</div>
+			</c:forEach>
 		</div>
-	</header>
 	
 	</div>
 	

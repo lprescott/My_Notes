@@ -28,7 +28,7 @@
 		});
 	</script>
 	
-	<c:if test="${sessionScope.login == 'false'}">
+	<c:if test="${(sessionScope.login == 'false') && (sessionScope.error == 'IC')}">
     	<script>
 	    	swal({
 	    		title: "Invalid Login Credentials",
@@ -37,16 +37,43 @@
     	</script>
 	</c:if>
 	
+	<c:if test="${(sessionScope.login == 'false') && (sessionScope.error == 'UE')}">
+    	<script>
+	    	swal({
+	    		title: "Unknown Error",
+			  	icon: "error",
+			});
+    	</script>
+	</c:if>
+	
 	<c:if test="${sessionScope.login == 'true'}">
     	<script>
 	    	swal({
-	    		title: "Success!",
-	    		text: "You will be redirected soon.",
+	    		title: "Welcome",
+	    		text: "You are logged in and will be redirected.",
 			  	icon: "success",
-			  	buttons: false,
-			});
-
-    	    setTimeout(function () {
+	    		  buttons: {
+	    		    Cancel: "Cancel",
+	    		    go: "Go now!",
+	    		  },
+	    		})
+	    		.then((value) => {
+	    		  switch (value) {
+	    		 
+	    		    case "Cancel":
+	    		      window.location = "killSession.jsp";
+	    		      break;
+	    		 
+	    		    case "go":
+	    		      window.location = "${pageContext.request.contextPath}/user/home.jsp";
+	    		      break;
+	    		      
+	    		   default:
+	    			   break;
+	    		  }
+	    		});
+	    	
+	    	setTimeout(function () {
     	       window.location.href = "${pageContext.request.contextPath}/user/home.jsp";
     	    }, 2000); 
     	</script>

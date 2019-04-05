@@ -33,8 +33,6 @@ public class Login extends HttpServlet {
      */
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        int id = 0;
-
     	String username = request.getParameter("username");
         String password = request.getParameter("password");
 
@@ -53,11 +51,13 @@ public class Login extends HttpServlet {
             String USER_SQL_Query = "SELECT USER_ID, USERNAME, PASSWORD FROM USERS";
             
             ResultSet USER_Results = USER_SQL_Statement.executeQuery(USER_SQL_Query);
-
+            int id;
 
             // Extract data from result set: USER_Results
             while (USER_Results.next()) {
                 if (username.equals(USER_Results.getString("USERNAME")) && password.equals(USER_Results.getString("PASSWORD"))) {
+                	
+                	id = Integer.parseInt(USER_Results.getString("USER_ID"));
                 	
                 	//generate a new session
                     //create jssessionid cookie
@@ -92,6 +92,7 @@ public class Login extends HttpServlet {
             //Add session attributes
 			session.setAttribute("id", null);
 			session.setAttribute("login", "false");
+			session.setAttribute("error", "IC");
 			session.setAttribute("username", username);
             
             // Clean-up environment
@@ -105,7 +106,23 @@ public class Login extends HttpServlet {
 
         } catch (Exception e) {
             //System.out.println(e);
-        	      
+        	
+        	//generate a new session
+            //create jssessionid cookie
+            HttpSession session = request.getSession(true);
+
+            //Expiration in 10 minutes
+            session.setMaxInactiveInterval(60);
+            
+            //Add session attributes
+			session.setAttribute("id", null);
+			session.setAttribute("login", "false");
+			session.setAttribute("error", "UE");
+			session.setAttribute("username", username);
+			
+            //redirect to user main page
+            response.sendRedirect(request.getContextPath() + "/login.jsp");
+            return;
         }
     }
 }

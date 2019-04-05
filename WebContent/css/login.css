@@ -85,3 +85,11 @@ body {
 ::-ms-input-placeholder { 
   color: rgb(154, 159, 168);
 }
+
+.swal-button--Cancel{
+	background: #ED4337;
+}
+
+.swal-button--Cancel:hover{
+	background: #d82013 !important;
+}
