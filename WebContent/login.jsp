@@ -11,7 +11,16 @@
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/login.css">
 </head>
 
-<body>
+<body id="particles-js" style="overflow: hidden;">
+
+	<script src="${pageContext.request.contextPath}/js/particles.js"></script>
+	<script>
+		/* particlesJS.load(@dom-id, @path-json, @callback (optional)); */
+		particlesJS.load('particles-js', '${pageContext.request.contextPath}/json/particlesjs-config.json', function() {
+		  console.log('callback - particles.js config loaded');
+		});
+	</script>
+
 	<div class="login">
 		<form  action="${pageContext.request.contextPath}/Login" method="post">
 			<div class="username">
@@ -24,7 +33,7 @@
 		</form>
 		
 		<%
-			if (request.getParameter("success") != null &&  request.getParameter("success").equals("false")) {
+			if (request.getParameter("login") != null &&  request.getParameter("login").equals("false")) {
 				out.println("<div class=\"error\"><p>Invalid login credentials.</p></div>");
 			}
 		%>

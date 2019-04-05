@@ -1,14 +1,12 @@
 html {
-  height: 100%;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-
-  font-family: "Open Sans", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-
+	height: 100%;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	font-family: "Open Sans", sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 	background: rgba(147, 206, 222, 1);
 	background-repeat: no-repeat;
 	background: -moz-linear-gradient(left, rgba(147, 206, 222, 1) 0%,
@@ -25,50 +23,50 @@ html {
 		rgba(73, 165, 191, 1) 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#93cede',
 		endColorstr='#49a5bf', GradientType=1);
- }
+}
+
+body {
+	margin: 0;
+}
 
 .login {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+ 	position: absolute;
+	left: 50%;
+	top: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
 }
 
-.username,
-.password{
-  background: white;
+.username, .password {
+	background: white;
 }
 
-.username,
-.password{
-  padding: 10px;
-  margin: 10px;
-  border-radius: 5px;
-  box-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+.username, .password {
+	padding: 10px;
+	margin: 10px;
+	border-radius: 5px;
+	box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
 
-.username i,
-.password i {
-  color: rgba(147, 206, 222,1);
-  font-size: 18pt;
-  padding: 5px;  
+.username i, .password i {
+	color: rgba(147, 206, 222, 1);
+	font-size: 18pt;
+	padding: 5px;
 }
 
-.username input[type="text"],
-.password input[type="password"]{
-  font-size: 18pt;
-  background: none;
-  border: none;
-  color: rgb(124,129,140);
+.username input[type="text"], .password input[type="password"] {
+	font-size: 18pt;
+	background: none;
+	border: none;
+	color: rgb(124, 129, 140);
 }
 
 *:focus {
-  outline: none;
+	outline: none;
 }
 
-.error{
+.error {
 	text-align: center;
-    color: white;
-    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+	color: white;
+	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
 }
