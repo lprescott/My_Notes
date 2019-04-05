@@ -1,3 +1,6 @@
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <!doctype html>
 <html lang="en">
 
@@ -11,7 +14,7 @@
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/login.css">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/particles.css">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/animate.css">
-
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
 
 <body id="particles-js" style="overflow: hidden;">
@@ -23,6 +26,15 @@
 		  console.log('callback - particles.js config loaded');
 		});
 	</script>
+	
+	<c:if test="${not empty param.login}">
+    	<script>
+	    	swal({
+	    		title: "Invalid Login Credentials",
+			  	icon: "error",
+			});
+    	</script>
+	</c:if>
 
 	<div class="login">
 		<form  action="${pageContext.request.contextPath}/Login" method="post">
@@ -34,14 +46,6 @@
 			</div>
 			<input type="submit" style="display: none"/>
 		</form>
-		
-		<%
-			if (request.getParameter("login") != null &&  request.getParameter("login").equals("false")) {
-				out.println("<div class=\"message animated flash\"><p>Invalid login credentials.</p></div>");
-			} else{
-				out.println("<div class=\"message\"><p>&nbsp</p></div>");
-			}
-		%>
 	</div>
 </body>
 

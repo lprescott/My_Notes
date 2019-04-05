@@ -70,6 +70,7 @@ body {
 .message {
 	text-align: center;
 	color: #ff2e3a;
+	text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5);
 }
 
 ::placeholder {
