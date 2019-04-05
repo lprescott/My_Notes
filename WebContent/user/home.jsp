@@ -30,15 +30,15 @@
 	<div id="main">
 	
 	<header>
-		<div class="header-item search-item" style="flex-basis: 99%; flex-grow: 1; white-space: nowrap;">
-			<i class="fas fa-search" style="padding-right:10px"></i><input style="width: 100%;" type="text" id="notes-filter" onkeyup="filterNotes('notes-filter')" placeholder="Filter the below notes...">
+		<div class="header-item search-item">
+			<i class="fas fa-search"></i><input type="text" id="notes-filter" onkeyup="filterNotes('notes-filter')" placeholder="Filter the below notes...">
 		</div>
-		<div class="header-item" style="flex-basis: 1%; flex-grow: 1; white-space: nowrap;">
+		<div class="header-item">
 			
 			<form action="${pageContext.request.contextPath}/Logout" method="post">
 		 		${username}
 			 	<span>
-				   <button type="submit" name="Logout" value="Logout" ><i style="padding-top: 5px;padding-bottom: 0px;padding-left: 0px;padding-right: 0px;" class="fas fa-sign-out-alt"></i></button>
+				   <button type="submit" name="Logout" value="Logout" ><i class="fas fa-sign-out-alt"></i></button>
 				</span>
 			</form>	 	
 		
