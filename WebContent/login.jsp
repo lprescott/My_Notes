@@ -1,6 +1,7 @@
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    
 <!doctype html>
 <html lang="en">
 
@@ -27,7 +28,7 @@
 		});
 	</script>
 	
-	<c:if test="${not empty param.login}">
+	<c:if test="${sessionScope.login == 'false'}">
     	<script>
 	    	swal({
 	    		title: "Invalid Login Credentials",
@@ -35,14 +36,40 @@
 			});
     	</script>
 	</c:if>
+	
+	<c:if test="${sessionScope.login == 'true'}">
+    	<script>
+	    	swal({
+	    		title: "Success!",
+	    		text: "You will be redirected soon.",
+			  	icon: "success",
+			  	buttons: false,
+			});
+
+    	    setTimeout(function () {
+    	       window.location.href = "${pageContext.request.contextPath}/user/home.jsp";
+    	    }, 2000); 
+    	</script>
+	</c:if>
 
 	<div class="login">
 		<form  action="${pageContext.request.contextPath}/Login" method="post">
 			<div class="username">
-				<label for="username"><i class="fas fa-user"></i></label> <input type="text" name="username" placeholder="username" required>
+				<label for="username">
+					<i class="fas fa-user"></i>
+				</label> 
+				<c:if test="${not empty sessionScope.username}">
+					<input type="text" name="username" placeholder="username" value="${sessionScope.username}" required>
+				</c:if>
+				<c:if test="${empty sessionScope.username}">
+					<input type="text" name="username" placeholder="username" required>
+				</c:if>
 			</div>
 			<div class="password">
-				<label for="password"><i class="fas fa-lock"></i></label> <input type="password" name="password" placeholder="password" required>
+				<label for="password">
+					<i class="fas fa-lock"></i>
+				</label>
+				<input type="password" name="password" placeholder="password" required>
 			</div>
 			<input type="submit" style="display: none"/>
 		</form>
