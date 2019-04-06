@@ -1,7 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-    
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
 <!doctype html>
 <html lang="en">
 
@@ -20,7 +19,7 @@
 
 <body>
 	<div id="particles-js"></div>
-	
+
 	<script src="${pageContext.request.contextPath}/js/particles.js"></script>
 	<script>
 		/* particlesJS.load(@dom-id, @path-json, @callback (optional)); */
@@ -28,27 +27,27 @@
 		  console.log('callback - particles.js config loaded');
 		});
 	</script>
-	
+
 	<c:if test="${(sessionScope.login == 'false') && (sessionScope.error == 'IC')}">
-    	<script>
+		<script>
 	    	swal({
 	    		title: "Invalid Login Credentials",
 			  	icon: "error",
 			});
     	</script>
 	</c:if>
-	
+
 	<c:if test="${(sessionScope.login == 'false') && (sessionScope.error == 'UE')}">
-    	<script>
+		<script>
 	    	swal({
 	    		title: "Unknown Error",
 			  	icon: "error",
 			});
     	</script>
 	</c:if>
-	
+
 	<c:if test="${sessionScope.login == 'true'}">
-    	<script>
+		<script>
 	    	swal({
 	    		title: "Welcome",
 	    		text: "You are logged in and will be redirected.",
@@ -81,11 +80,10 @@
 	</c:if>
 
 	<div class="login">
-		<form  action="${pageContext.request.contextPath}/Login" method="post">
+		<form action="${pageContext.request.contextPath}/Login" method="post">
 			<div class="username">
-				<label for="username">
-					<i class="fas fa-user"></i>
-				</label> 
+				<label for="username"> <i class="fas fa-user"></i>
+				</label>
 				<c:if test="${not empty sessionScope.username}">
 					<input type="text" name="username" placeholder="username" value="${sessionScope.username}" required>
 				</c:if>
@@ -94,12 +92,10 @@
 				</c:if>
 			</div>
 			<div class="password">
-				<label for="password">
-					<i class="fas fa-lock"></i>
-				</label>
-				<input type="password" name="password" placeholder="password" required>
+				<label for="password"> <i class="fas fa-lock"></i>
+				</label> <input type="password" name="password" placeholder="password" required>
 			</div>
-			<input type="submit" style="display: none"/>
+			<input type="submit" style="display: none" />
 		</form>
 	</div>
 </body>

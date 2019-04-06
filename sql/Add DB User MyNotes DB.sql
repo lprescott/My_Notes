@@ -1,3 +1,5 @@
+#Luke Prescott
+
 USE MYNOTES;
 
 #Create a user with access to DB

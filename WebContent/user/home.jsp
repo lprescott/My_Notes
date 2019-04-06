@@ -38,7 +38,7 @@
 
 	<c:choose>
 		<c:when test="${result == 'create_success'}">
-			<script>swal("Success", "You create a new note.", "success");</script>
+			<script>swal("Success", "You created a new note.", "success");</script>
 		</c:when>
 		<c:when test="${result == 'create_error'}">
 			<script>swal("Error", "The note could not be created", "error");</script>

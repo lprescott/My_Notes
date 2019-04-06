@@ -1,3 +1,5 @@
+#Luke Prescott
+
 USE MYNOTES;
 
 #Add some notes to DB

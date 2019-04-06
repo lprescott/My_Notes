@@ -15,6 +15,10 @@ import javax.servlet.http.HttpSession;
 import edu.albany.csi410.session.LoginEnum;
 
 /**
+ * @author Luke Prescott
+ */
+
+/**
  * Servlet implementation class DeleteNote
  */
 @WebServlet("/DeleteNote")

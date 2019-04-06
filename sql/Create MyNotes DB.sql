@@ -1,3 +1,5 @@
+#Luke Prescott
+
 #Create and use DB
 CREATE DATABASE IF NOT EXISTS MYNOTES;
 USE MYNOTES;
