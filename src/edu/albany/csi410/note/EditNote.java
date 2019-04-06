@@ -33,11 +33,11 @@ public class EditNote extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		String title = request.getParameter("note-title");
-        String text = request.getParameter("new_note_textarea");
+        
+		int noteID = Integer.parseInt(request.getParameter("NOTE_ID"));
         int userID = Integer.parseInt(request.getParameter("USER_ID"));
-        int noteID = Integer.parseInt(request.getParameter("NOTE_ID"));
+		String title = request.getParameter("note-title");
+        String text = request.getParameter(noteID + "_textarea");
 
 		try {
             //Load the Connector/J
