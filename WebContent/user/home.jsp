@@ -17,6 +17,8 @@
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/particles.css">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/animate.css">
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="${pageContext.request.contextPath}/js/main.js"></script>
+
 </head>
 <body>
 	<div id="particles-js"></div>
@@ -43,8 +45,8 @@
 
 				<form action="${pageContext.request.contextPath}/Logout" method="post">
 					${username} <span>
-						<button id="logout-link" type="submit" name="Logout" value="Logout" title="Logout">
-							<i id="logout" class="fas fa-sign-out-alt"></i>
+						<button class="logout-link" type="submit" name="Logout" value="Logout" title="Logout">
+							<i class="logout fas fa-sign-out-alt"></i>
 						</button>
 					</span>
 				</form>
@@ -57,16 +59,22 @@
 
 		<div id="note-container">
 			<c:forEach var="row" items="${result.rows}">
-				<div class="note">
-					<div style="text-align: left; font-size: 18pt;">
-						<c:out value="${row.TITLE}" />
-						<span style="float: right;"><a id="dropdown-link"><i id="dropdown" class="fas fa-caret-down"></i></a><a id="edit-link"><i id="edit" class="fas fa-edit"></i></a><a id="delete-link"><i id="delete" class="fas fa-times"></i></a></span>
+				<form action="${pageContext.request.contextPath}/EditNote" method="post">
+					<div class="note" id="${row.NOTE_ID}_note"> 
+						<div style="text-align: left;">
+							<input style="font-size: 18pt; color: rgb(105, 109, 119);" class="note-title" value="${row.TITLE}">
+							<span style="float: right;"><a onclick="viewTextArea(${row.NOTE_ID})" class="dropdown-link"><i class="${row.TITLE}_dropdown fas fa-caret-down dropdown"></i></a><a class="save-link"><i class="save fas fa-save"></i></a><a class="delete-link"><i class="delete fas fa-times"></i></a></span>
+						</div>
+						<hr style="margin-left:-20px; margin-right:-20px;" >
+						<textarea id="${row.NOTE_ID}_textarea" style="font-size: 15pt; color: rgb(105, 109, 119);" onkeyup="auto_grow(this)" class="note-text"><c:out value="${row.TEXT}"/></textarea>
+						<script>
+							function auto_grow(element) {
+							    element.style.height = "5px";
+							    element.style.height = (element.scrollHeight)+"px";
+							}
+						</script>
 					</div>
-					<hr style="margin-left:-20px; margin-right:-20px;" >
-					<p id="${row.NOTE_ID}_TEXT" style="font-size: 14pt;">
-						<c:out value="${row.TEXT}" />
-					</p>
-				</div>
+				</form>
 			</c:forEach>
 		</div>
 

@@ -40,6 +40,7 @@ body {
 
 .username, .password {
 	background: white;
+	transition: all .5s linear;
 }
 
 .username, .password {

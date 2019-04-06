@@ -44,6 +44,7 @@ header {
 	box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 	color: rgb(105, 109, 119);
 	overflow: hidden;
+	transition: all .5s linear;
 }
 
 .header-item {
@@ -116,6 +117,7 @@ fas.fa-sign-out-alt {
 	border-radius: 5px;
 	box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 	color: rgb(105, 109, 119);
+	transition: all .5s linear;
 }
 
 .controls {
@@ -146,19 +148,19 @@ header a {
 	padding: 10px;
 }
 
-#dropdown {
+.dropdown {
 	padding: 5px 10px;
 	color: rgba(147, 206, 222, 0.75);
 	text-shadow: 0px 1px 1px #fff, 0 0 0 #000, 0px 0px 0px transparent;
 }
 
-#edit {
+.save {
 	padding: 5px 10px;
 	color: rgba(147, 206, 222, 0.75);
 	text-shadow: 0px 1px 1px #fff, 0 0 0 #000, 0px 0px 0px transparent;
 }
 
-#delete {
+.delete {
 	padding: 5px 10px;
 	color: rgba(234, 89, 79, 0.75);
 	text-shadow: 0px 1px 1px #fff, 0 0 0 #000, 0px 0px 0px transparent;
@@ -169,34 +171,48 @@ header a {
 }
 
 
-#edit-link:hover #edit{
+.save-link:hover .save{
 	text-shadow: none;
 }
 
-#edit-link:active #edit{
+.save-link:active .save{
 	text-shadow: 0px 1px 1px #fff, 0 0 0 #000, 0px 0px 0px transparent;
 }
 
-#dropdown-link:hover #dropdown{
+.dropdown-link:hover .dropdown{
 	text-shadow: none;
 }
 
-#dropdown-link:active #dropdown{
+.dropdown-link:active .dropdown{
 	text-shadow: 0px 1px 1px #fff, 0 0 0 #000, 0px 0px 0px transparent;
 }
 
-#delete-link:hover #delete{
+.delete-link:hover .delete{
 	text-shadow: none;
 }
 
-#delete-link:active #delete{
+.delete-link:active .delete{
 	text-shadow: 0px 1px 1px #fff, 0 0 0 #000, 0px 0px 0px transparent;
 }
 
-#logout-link:hover #logout{
+.logout-link:hover .logout{
 	text-shadow: none;
 }
 
-#logout-link:active #logout{
+.logout-link:active .logout{
 	text-shadow: 0px 1px 1px #fff, 0 0 0 #000, 0px 0px 0px transparent;
 }
+
+.note-title{
+	width:75%;
+	border: none;
+}
+
+.note-text{
+	width:100%;
+	border-style: none; 
+    border-color: Transparent; 
+    resize: vertical;
+    min-height: 70px;
+}
+
