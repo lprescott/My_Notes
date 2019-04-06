@@ -20,7 +20,7 @@
 <script src="${pageContext.request.contextPath}/js/main.js"></script>
 
 </head>
-<body>
+<body onload="setTextareaHeight();">
 	<div id="particles-js"></div>
 
 	<script src="${pageContext.request.contextPath}/js/particles.js"></script>
@@ -36,7 +36,7 @@
 
 	<div id="main">
 		<header>
-			<a id="new-link"><i id="new" class="fas fa-plus"></i></a>
+			<a id="new-link" onclick="viewNewNote()"><i id="new" class="fas fa-plus"></i></a>
 
 			<div class="padding header-item search-item">
 				<i class="fas fa-search"></i> <input type="text" id="notes-filter" onkeyup="filterNotes('notes-filter')" placeholder="Filter the below notes...">
@@ -57,9 +57,28 @@
 		<sql:setDataSource var="snapshot" driver="com.mysql.cj.jdbc.Driver" url="<%=LoginEnum.hostname.getValue()%>" user="<%=LoginEnum.username.getValue()%>" password="<%=LoginEnum.password.getValue()%>" />
 		<sql:query dataSource="${snapshot}" var="result"> SELECT * FROM NOTES WHERE USER_ID = ${id};</sql:query>
 
-		<div id="note-container">
+		<div id="note-container" >
+		
+			<form action="${pageContext.request.contextPath}/CreateNote" method="post">
+				<div class="note" id="new_note" style="display: none;"> 
+					<div style="text-align: left;">
+						<input style="font-size: 18pt; color: rgb(105, 109, 119);" class="note-title" placeholder="New Note">
+						<span style="float: right;"><a class="save-link"><i class="save fas fa-save"></i></a><a onclick="hideNewNote()" class="delete-link"><i class="delete fas fa-times"></i></a></span>
+					</div>
+					<hr style="margin-left:-20px; margin-right:-20px;" >
+					<textarea id="new_note_textarea" style="font-size: 15pt; color: rgb(105, 109, 119);" onkeyup="auto_grow(this)" class="note-text" placeholder="Content"></textarea>
+					<script>
+						function auto_grow(element) {
+						    element.style.height = "5px";
+						    element.style.height = (element.scrollHeight)+"px";
+						}
+					</script>
+				</div>
+			</form>
+				
 			<c:forEach var="row" items="${result.rows}">
 				<form action="${pageContext.request.contextPath}/EditNote" method="post">
+					<input id="NOTE_ID" type="hidden" name="NOTE_ID" value="${row.NOTE_ID}">  
 					<div class="note" id="${row.NOTE_ID}_note"> 
 						<div style="text-align: left;">
 							<input style="font-size: 18pt; color: rgb(105, 109, 119);" class="note-title" value="${row.TITLE}">
@@ -67,12 +86,7 @@
 						</div>
 						<hr style="margin-left:-20px; margin-right:-20px;" >
 						<textarea id="${row.NOTE_ID}_textarea" style="font-size: 15pt; color: rgb(105, 109, 119);" onkeyup="auto_grow(this)" class="note-text"><c:out value="${row.TEXT}"/></textarea>
-						<script>
-							function auto_grow(element) {
-							    element.style.height = "5px";
-							    element.style.height = (element.scrollHeight)+"px";
-							}
-						</script>
+						<div id="${row.NOTE_ID}_ellipsis" style="display: none; text-align: center; color: rgb(198, 201, 206); "><i class="fas fa-ellipsis-v"></i></div>
 					</div>
 				</form>
 			</c:forEach>

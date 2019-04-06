@@ -32,6 +32,8 @@ body {
 
 #main {
 	padding: 10px;
+	max-width: 1500px;
+	margin: 0 auto;
 }
 
 header {
@@ -118,6 +120,7 @@ fas.fa-sign-out-alt {
 	box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 	color: rgb(105, 109, 119);
 	transition: all .5s linear;
+	margin-bottom: 20px;
 }
 
 .controls {
@@ -134,9 +137,11 @@ header>a>i {
 
 header>a:hover>i{
 	text-shadow: none;
+	color: rgba(134,191,119, 0.75);
 }
 
 header>a:active>i{
+	color: rgba(91, 170, 75, 0.75);
 	text-shadow: 0px 1px 1px #fff, 0 0 0 #000, 0px 0px 0px transparent;
 }
 
@@ -213,6 +218,6 @@ header a {
 	border-style: none; 
     border-color: Transparent; 
     resize: vertical;
-    min-height: 70px;
+    min-height: 23px;
 }
 
