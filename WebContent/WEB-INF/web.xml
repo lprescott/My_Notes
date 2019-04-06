@@ -21,6 +21,18 @@
 		<servlet-name>Logout</servlet-name>
 		<servlet-class>edu.albany.csi410.session.Logout</servlet-class>
 	</servlet>
+	<servlet>
+		<servlet-name>CreateNote</servlet-name>
+		<servlet-class>edu.albany.csi410.note.CreateNote</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>EditNote</servlet-name>
+		<servlet-class>edu.albany.csi410.note.EditNote</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>DeleteNote</servlet-name>
+		<servlet-class>edu.albany.csi410.note.DeleteNote</servlet-class>
+	</servlet>
 	<filter>
 		<filter-name>userFilter</filter-name>
 		<filter-class>edu.albany.csi410.authentication.UserFilter</filter-class>
