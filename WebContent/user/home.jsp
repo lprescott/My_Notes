@@ -24,19 +24,17 @@
 	<script src="${pageContext.request.contextPath}/js/particles.js"></script>
 	<script>
 		/* particlesJS.load(@dom-id, @path-json, @callback (optional)); */
-		particlesJS
-				.load(
-						'particles-js',
-						'${pageContext.request.contextPath}/json/particlesjs-config-nasa.json',
-						function() {
-							console
-									.log('callback - particles.js nasa config loaded');
-						});
+		particlesJS.load(
+			'particles-js',
+			'${pageContext.request.contextPath}/json/particlesjs-config-nasa.json',
+			function() {
+				console.log('callback - particles.js nasa config loaded');
+		});
 	</script>
 
 	<div id="main">
 		<header>
-			<a><i class="fas fa-plus"></i></a>
+			<a id="new-link"><i id="new" class="fas fa-plus"></i></a>
 
 			<div class="padding header-item search-item">
 				<i class="fas fa-search"></i> <input type="text" id="notes-filter" onkeyup="filterNotes('notes-filter')" placeholder="Filter the below notes...">
@@ -45,8 +43,8 @@
 
 				<form action="${pageContext.request.contextPath}/Logout" method="post">
 					${username} <span>
-						<button type="submit" name="Logout" value="Logout" title="Logout">
-							<i class="fas fa-sign-out-alt"></i>
+						<button id="logout-link" type="submit" name="Logout" value="Logout" title="Logout">
+							<i id="logout" class="fas fa-sign-out-alt"></i>
 						</button>
 					</span>
 				</form>
@@ -62,10 +60,10 @@
 				<div class="note">
 					<div style="text-align: left; font-size: 18pt;">
 						<c:out value="${row.TITLE}" />
-						<span style="float: right;"><i id="dropdown" class="fas fa-caret-down"></i><i id="edit" class="fas fa-edit"></i><i id="delete" class="fas fa-times"></i></span>
+						<span style="float: right;"><a id="dropdown-link"><i id="dropdown" class="fas fa-caret-down"></i></a><a id="edit-link"><i id="edit" class="fas fa-edit"></i></a><a id="delete-link"><i id="delete" class="fas fa-times"></i></a></span>
 					</div>
 					<hr style="margin-left:-20px; margin-right:-20px;" >
-					<p style="font-size: 14pt;">
+					<p id="${row.NOTE_ID}_TEXT" style="font-size: 14pt;">
 						<c:out value="${row.TEXT}" />
 					</p>
 				</div>

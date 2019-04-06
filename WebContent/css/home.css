@@ -81,10 +81,6 @@ header {
 	text-shadow: 0px 1px 1px #fff, 0 0 0 #000, 0px 0px 0px transparent;
 }
 
-.header-item i:hover {
-	color: rgba(147, 206, 222, .9);
-}
-
 *:focus {
 	outline: none;
 }
@@ -134,7 +130,15 @@ header>a>i {
 	background: rgba(157, 221, 144, 0.75);
 }
 
-header>a {
+header>a:hover>i{
+	text-shadow: none;
+}
+
+header>a:active>i{
+	text-shadow: 0px 1px 1px #fff, 0 0 0 #000, 0px 0px 0px transparent;
+}
+
+header a {
 	cursor: pointer;
 }
 
@@ -156,5 +160,43 @@ header>a {
 
 #delete {
 	padding: 5px 10px;
-	color: #ea594f;
+	color: rgba(234, 89, 79, 0.75);
+	text-shadow: 0px 1px 1px #fff, 0 0 0 #000, 0px 0px 0px transparent;
+}
+
+.note a{
+	cursor: pointer;
+}
+
+
+#edit-link:hover #edit{
+	text-shadow: none;
+}
+
+#edit-link:active #edit{
+	text-shadow: 0px 1px 1px #fff, 0 0 0 #000, 0px 0px 0px transparent;
+}
+
+#dropdown-link:hover #dropdown{
+	text-shadow: none;
+}
+
+#dropdown-link:active #dropdown{
+	text-shadow: 0px 1px 1px #fff, 0 0 0 #000, 0px 0px 0px transparent;
+}
+
+#delete-link:hover #delete{
+	text-shadow: none;
+}
+
+#delete-link:active #delete{
+	text-shadow: 0px 1px 1px #fff, 0 0 0 #000, 0px 0px 0px transparent;
+}
+
+#logout-link:hover #logout{
+	text-shadow: none;
+}
+
+#logout-link:active #logout{
+	text-shadow: 0px 1px 1px #fff, 0 0 0 #000, 0px 0px 0px transparent;
 }
