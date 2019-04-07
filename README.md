@@ -1,6 +1,13 @@
-# mynotes 
-## Windows O.S. > Apache Tomcat 9.0 > MySQL > J.S.P. (Java Server Pages).
+# A simple JSP CRUD app for taking notes.
+### Windows O.S. > Apache Tomcat 9.0 > MySQL > J.S.P. (Java Server Pages).
 
+### Resources Used:
+ - [particles.js](https://github.com/VincentGarreau/particles.js/)
+ - [animate.css](https://daneden.github.io/animate.css/)
+ - [SweetAlert](https://sweetalert.js.org/guides/)
+ - [FontAwesome](https://fontawesome.com/?from=io)
+ 
+### Screenshots below:
 ![1](/images/1.jpg) 
 
 Login Screen
